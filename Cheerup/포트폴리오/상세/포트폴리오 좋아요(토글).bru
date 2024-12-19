@@ -1,10 +1,10 @@
 meta {
-  name: 포트폴리오 - 좋아요 취소
+  name: 포트폴리오 좋아요(토글)
   type: http
-  seq: 4
+  seq: 20
 }
 
-delete {
+post {
   url: {{server_domain}}/portfolio/{portfolioId}/like
   body: none
   auth: none

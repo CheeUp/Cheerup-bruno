@@ -5,12 +5,12 @@ meta {
 }
 
 get {
-  url: {{server_domain}}/portfolio/{portfolioId}/feedback?커서=1&fetchSize=10
+  url: {{server_domain}}/portfolio/{portfolioId}/feedback?{cursor}=1&{fetchSize}=10
   body: none
   auth: none
 }
 
 params:query {
-  커서: 1
-  fetchSize: 10
+  {cursor}: 1
+  {fetchSize}: 10
 }

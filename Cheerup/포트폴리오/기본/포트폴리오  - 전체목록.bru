@@ -1,0 +1,16 @@
+meta {
+  name: 포트폴리오  - 전체목록
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{server_domain}}/portfolios?{cursor}=1&{fetchSize}=10
+  body: none
+  auth: none
+}
+
+params:query {
+  {cursor}: 1
+  {fetchSize}: 10
+}
