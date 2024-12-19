@@ -1,0 +1,16 @@
+meta {
+  name: 포트폴리오 조회  - 피드백
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{server_domain}}/portfolio/{portfolioId}/feedback?{ }=1&fetchSize=10
+  body: none
+  auth: none
+}
+
+params:query {
+  { }: 1
+  fetchSize: 10
+}
