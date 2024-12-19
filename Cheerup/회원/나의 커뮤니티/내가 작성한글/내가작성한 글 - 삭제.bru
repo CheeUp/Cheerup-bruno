@@ -1,0 +1,15 @@
+meta {
+  name: 내가작성한 글 - 삭제
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{server_domain}}/member/post?{postId}=123
+  body: none
+  auth: none
+}
+
+params:query {
+  {postId}: 123
+}
