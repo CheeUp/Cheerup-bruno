@@ -1,11 +1,11 @@
 meta {
   name: 게시판 공통 - 게시글 댓글 조회
   type: http
-  seq: 6
+  seq: 9
 }
 
 get {
-  url: {{server_domain}}/community/board/{boardName}/{postId}/comments
+  url: {{server_domain}}/post/{postId}/comments
   body: none
   auth: none
 }

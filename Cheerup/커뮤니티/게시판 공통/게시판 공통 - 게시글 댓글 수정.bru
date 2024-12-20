@@ -1,11 +1,11 @@
 meta {
   name: 게시판 공통 - 게시글 댓글 수정
   type: http
-  seq: 8
+  seq: 11
 }
 
 put {
-  url: {{server_domain}}/community/board/{boardName}/{postId}/comments/{commentId}
+  url: {{server_domain}}/post/{postId}/comment/{commentId}
   body: none
   auth: none
 }

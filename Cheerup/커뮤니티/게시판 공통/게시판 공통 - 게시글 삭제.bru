@@ -1,11 +1,11 @@
 meta {
   name: 게시판 공통 - 게시글 삭제
   type: http
-  seq: 5
+  seq: 8
 }
 
 delete {
-  url: {{server_domain}}/community/board/{boardName}/{postId}
+  url: {{server_domain}}/post/{postId}
   body: none
   auth: none
 }

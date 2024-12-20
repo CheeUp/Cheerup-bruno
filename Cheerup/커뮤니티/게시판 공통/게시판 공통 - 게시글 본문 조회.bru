@@ -1,11 +1,11 @@
 meta {
   name: 게시판 공통 - 게시글 본문 조회
   type: http
-  seq: 2
+  seq: 5
 }
 
 get {
-  url: {{server_domain}}/community/board/{boardName}/{postId}
+  url: {{server_domain}}/post/{postId}
   body: none
   auth: none
 }

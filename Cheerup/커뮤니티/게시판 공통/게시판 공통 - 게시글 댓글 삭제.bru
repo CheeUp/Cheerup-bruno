@@ -1,11 +1,11 @@
 meta {
   name: 게시판 공통 - 게시글 댓글 삭제
   type: http
-  seq: 9
+  seq: 12
 }
 
 delete {
-  url: {{server_domain}}/community/board/{boardName}/{postId}/comments/{commentId}
+  url: {{server_domain}}/post/{postId}/comment/{commentId}
   body: none
   auth: none
 }
