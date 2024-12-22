@@ -1,0 +1,50 @@
+meta {
+  name: 취업공고 스크랩
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{server_domain}}/job-notice/:jobNoticeId/scrap
+  body: none
+  auth: none
+}
+
+params:path {
+  jobNoticeId: 
+}
+
+docs {
+  # ✅ 성공
+  ## 스크랩
+  ``` json
+  {
+    "isSuccess": true,  
+    "code": 200,  
+    "message": null,  
+    "result": true
+  }  
+  ```
+  
+  ## 스크랩 취소
+  ``` json
+  {
+    "isSuccess": true,  
+    "code": 200,  
+    "message": null,  
+    "result": false
+  }  
+  ```
+  
+  # ❌ 실패
+  
+  ## 해당 취업공고가 존재하지 않는 경우
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 
+    "message": "취업공고가 존재하지 않습니다.",
+    "result": null
+  }
+  ```
+}

@@ -1,0 +1,50 @@
+meta {
+  name: 취업공고 좋아요
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{server_domain}}/job-notice/:jobNoticeId/like
+  body: none
+  auth: none
+}
+
+params:path {
+  jobNoticeId: 
+}
+
+docs {
+  # ✅ 성공
+  ## 좋아요
+  ``` json
+  {
+    "isSuccess": true,  
+    "code": 200,  
+    "message": null,  
+    "result": true
+  }  
+  ```
+  
+  ## 좋아요 취소
+  ``` json
+  {
+    "isSuccess": true,  
+    "code": 200,  
+    "message": null,  
+    "result": false
+  }  
+  ```
+  
+  # ❌ 실패
+
+  ## 해당 취업공고가 존재하지 않는 경우
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 
+    "message": "취업공고가 존재하지 않습니다.",
+    "result": null
+  }
+  ```
+}
