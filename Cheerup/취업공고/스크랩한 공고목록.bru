@@ -1,0 +1,41 @@
+meta {
+  name: 스크랩한 공고목록
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{server_domain}}/job-notices/scrap
+  body: none
+  auth: none
+}
+
+docs {
+  # ✅ 성공
+  ``` json
+  {
+    "isSuccess": true,
+    "code": 200,
+    "message": null,
+    "result": {
+      "jobNotices": [
+        {
+          "company": "삼성전자",
+          "start_date": "2024-12-22",
+          "end_date": "2024-12-31",
+          "isScraped": true,
+        },
+        {
+          "company": "신한은행",
+          "start_date": "2024-12-22",
+          "end_date": "2024-12-31",
+          "isScraped": true,
+        },
+      ]
+    }
+  }
+  ```
+  
+  # ❌ 실패
+  
+}
