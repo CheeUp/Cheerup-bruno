@@ -27,12 +27,22 @@ docs {
   
   # ❌ 실패
   
-  ## 회원 탈퇴 실패
+  ## 유저 토큰 만료, 유저 토큰 없음 등의 경우
   ``` json
   {
     "isSuccess": false,
-    "code": 
-    "message": "회원 탈퇴에 실패하였습니다.",
+    "code": 401,
+    "message": "인증에 실패하였습니다.",
+    "result": null
+  }
+  ```
+  
+  ## 서버 에러로 인한 회원 탈퇴 실패
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 500,
+    "message": "서버 내부 오류입니다, 잠시후 다시 실행해주세요.",
     "result": null
   }
   ```
