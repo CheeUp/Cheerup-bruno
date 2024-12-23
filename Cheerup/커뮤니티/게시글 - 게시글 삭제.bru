@@ -1,11 +1,11 @@
 meta {
-  name: 게시판 공통 - 게시글 댓글 삭제
+  name: 게시글 - 게시글 삭제
   type: http
-  seq: 1
+  seq: 9
 }
 
 delete {
-  url: {{server_domain}}/post/{postId}/comment/{commentId}
+  url: {{server_domain}}/post/{postId}
   body: none
   auth: none
 }
@@ -15,11 +15,11 @@ docs {
   ```json
   {
     "isSuccess": true,
-    "code": 200,
-    "message": "댓글 삭제 성공",
+    "code": 
+    "message": "게시글 삭제 성공",
     "result": {
-      "commentId": 123,   // 삭제된 댓글의 고유 ID
-      "postId": 456,      // 댓글이 달린 게시글 ID
+        "boardId": 1, // 게시판 ID
+        "postId": 1", // 게시글 번호
     }
   }
   ```
@@ -32,6 +32,6 @@ docs {
       "code": 
       "message": "실패 메시지",
       "result": null
-    }
+  }
   ```
 }
