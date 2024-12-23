@@ -5,7 +5,7 @@ meta {
 }
 
 put {
-  url: 
+  url: {{server_domain}}/member/update
   body: json
   auth: none
 }
@@ -15,7 +15,7 @@ body:json {
     "nickname": "김싸피",
     "email": "kim-ssafy@example.com",
     "group": "SSAFY 12기",
-    "profileImageUrl": "https://kakao.com/profile-image.jpg",
+    "profileImage": "https://kakao.com/profile-image.jpg",
     "skills": ["Flutter", "React", "Spring"],
     "preferredJobs": ["백엔드", "프론트엔드", "모바일"]
   }
@@ -42,9 +42,28 @@ docs {
   ``` json
   {
     "isSuccess": false,
-    "code": 
+    "code": 400,
     "message": "잘못된 요청 정보입니다.",
     "result": null
   }
   ```
+  
+  ## 유저 토큰 만료, 유저 토큰 없음 등의 경우
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 401,
+    "message": "인증에 실패하였습니다.",
+    "result": null
+  }
+  ```
+  
+  ## 서버 에러로 인한 내 정보 수정 실패
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 500,
+    "message": "서버 내부 오류입니다, 잠시후 다시 실행해주세요.",
+    "result": null
+  }
 }
