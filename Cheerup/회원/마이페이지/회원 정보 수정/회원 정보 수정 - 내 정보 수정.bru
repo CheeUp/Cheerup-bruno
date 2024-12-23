@@ -1,0 +1,50 @@
+meta {
+  name: 회원 정보 수정 - 내 정보 수정
+  type: http
+  seq: 1
+}
+
+put {
+  url: 
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nickname": "김싸피",
+    "email": "kim-ssafy@example.com",
+    "group": "SSAFY 12기",
+    "profileImageUrl": "https://kakao.com/profile-image.jpg",
+    "skills": ["Flutter", "React", "Spring"],
+    "preferredJobs": ["백엔드", "프론트엔드", "모바일"]
+  }
+}
+
+docs {
+  # ✅ 성공
+  
+  ### 회원 토큰 전송 필요
+  
+  ## 내 정보 변경 성공
+  ``` json
+  {
+    "isSuccess": true,  
+    "code": 200,  
+    "message": null,  
+    "result": true
+  }  
+  ```
+  
+  # ❌ 실패
+  
+  ## 요청 값 유효성 검사 실패
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 
+    "message": "잘못된 요청 정보입니다.",
+    "result": null
+  }
+  ```
+}
