@@ -9,3 +9,121 @@ get {
   body: none
   auth: none
 }
+
+docs {
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "성공",
+      "result": {
+        "portfolio" : {
+          "id" : 1,
+          "experiences" : {
+            "highSchool" : {
+              "id" : 1,
+              "name" : "싸피고등학교",
+              "major" :"인문계",
+              "type" : "일반고",
+              "start_date" : "2010-03-01",
+              "end_date" :"2013-02-28"
+            },
+            "university" : {
+              "id" : 1,
+              "name" :"싸피대학교",
+              "type" :"일반대학",
+              "campus" : "본캠",
+              "entry" :"입학",
+              "status" : "졸업",
+              "startDate" : "2011-03-01",
+              "endDate" :"2017-02-28",
+              "leaveDate":"",
+              "region" :"서울",
+              "degree" : "학사",
+              "major" : [
+                {
+                  "id" : 1,
+                  "name" :"경영학",
+                  "type" :"복수전공",
+                  "time" :"주간",
+                  "grade" :"4.2",
+                  "maxGrade" :"4.5"
+                },
+                {
+                  "id" : 2,
+                  "name" :"컴퓨터공학",
+                  "type" :"복수전공",
+                  "time" :"주간",
+                  "grade" :"4.1",
+                  "maxGrade" :"4.5"
+                }
+              ]
+            },
+            "graduate" : {
+              "id" : 1,
+              "name" :"싸피대학원",
+              "type" :"일반대학",
+              "campus" : "본캠",
+              "entry" :"입학",
+              "status" : "졸업",
+              "startDate" : "2020-03-01",
+              "endDate" :"2024-02-28",
+              "leaveDate":"",
+              "region" :"서울",
+              "degree" : "석사",
+              "major" : [
+                {
+                  "id" : 1,
+                  "name" :"인공지능",
+                  "type" :"주전공",
+                  "time" :"주간",
+                  "grade" : 4.0,
+                  "maxGrade" : 4.5
+                }
+              ]
+            },
+            "trainings" : [
+              {
+                "id" : 1,
+                "name" :"SSAFY",
+                "company" :"멀티캠퍼스",
+                "description" :"소프트웨거 개발 교육",
+                "content" :"웹 개발",
+                "status" :"이수중",
+                "startDate" :"2023-07-01",
+                "endDate" :""
+              }
+            ],
+            "careers" : [
+              {
+                "id" : 1,
+                "status" :"재직중",
+                "company" :"멀티캠퍼스",
+                "role" : "백엔드개발자",
+                "description" :"API 개발",
+                "startDate" :"2023-06-01",
+                "endDate" :"",
+                "leaveDate" :""
+              }
+            
+            ]
+          }
+        }    
+      }
+  }
+  
+  ```
+  
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": ?,
+      "message": ?,
+      "result": null
+    }
+  ```
+}

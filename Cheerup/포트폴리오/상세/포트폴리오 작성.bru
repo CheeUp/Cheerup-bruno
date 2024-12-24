@@ -1,13 +1,21 @@
 meta {
-  name: 포트폴리오 피드백 - 좋아요(토글)
+  name: 포트폴리오 작성
   type: http
-  seq: 11
+  seq: 1
 }
 
 post {
-  url: {{server_domain}}/portfolio/{portfolioId}/feedback/{feedbackId}/like
-  body: none
+  url: {{server_domain}}/portfolio
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "title" : "title",
+    "job" : "백엔드",
+    "open" : true
+  }
 }
 
 docs {
@@ -18,7 +26,11 @@ docs {
       "code": 200,
       "message": "성공",
       "result": {
-        "likesStatus" : true
+        "portfolio" : {
+            "id" : 1,
+            "job" :"백엔드",
+            "open" : true
+        }
       }
   }
   

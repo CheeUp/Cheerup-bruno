@@ -6,6 +6,122 @@ meta {
 
 put {
   url: {{server_domain}}/portfolio/{portfolioId}/achievements
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "certificates": [
+      {
+        "id": 1,
+        "name": "정보처리",
+        "grade": "기사",
+        "earnedDate": "2021-11-01"
+      },
+      {
+        "id": 2,
+        "name": "SQLD",
+        "grade": "",
+        "earnedDate": "2022-01-01"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "TOEIC",
+        "grade": "789",
+        "earnedDate": "2021-11-01"
+      }
+    ],
+    "awards": [
+      {
+        "id": 1,
+        "name": "성적우수",
+        "grade": "대상",
+        "earnedDate": "2022-12-01"
+      }
+    ],
+    "theses": [
+      {
+        "id": 1,
+        "title": "AI 기반 추천 시스템",
+        "subTitle": "행동 분석 추천 시스템",
+        "summary": "사용자 데이터 분석 알고리즘",
+        "submisstionTarget": "xxx",
+        "submisstionDate": "2024-06-01"
+      }
+    ]
+  }
+}
+
+docs {
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "성공",
+      "result": {
+        "portfolio" : {
+          "id" : 1,
+          "achievements" :{
+            "certificates" : [
+              {
+                "id" : 1,
+                "name" : "정보처리",
+                "grade" : "기사",
+                "earnedDate" : "2021-11-01"
+              },
+              {
+                "id" : 2,
+                "name" : "SQLD",
+                "grade" :"",
+                "earnedDate" :"2022-01-01"
+              }
+            ],
+            "languages" :[
+              {
+                "id" : 1,
+                "name" : "TOEIC",
+                "grade" : "789",
+                "earnedDate": "2021-11-01"
+              }
+            ],
+            "awards" :[
+              {
+                "id" : 1,
+                "name" : "성적우수",
+                "grade" : "대상",
+                "earnedDate": "2022-12-01"
+              }
+            ],
+            "theses" :[
+              {
+                "id" : 1,
+                "title" : "AI 기반 추천 시스템",
+                "subTitle" : "행동 분석 추천 시스템",
+                "summary" : "사용자 데이터 분석 알고리즘",
+                "submisstionTarget" : "xxx",
+                "submisstionDate" :"2024-06-01"
+              }
+            ]
+          }
+        }    
+      }
+  }
+  
+  ```
+  
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": ?,
+      "message": ?,
+      "result": null
+    }
+  ```
 }
