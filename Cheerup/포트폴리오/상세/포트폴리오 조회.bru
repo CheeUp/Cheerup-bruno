@@ -1,11 +1,11 @@
 meta {
-  name: 포트폴리오 피드백 - 삭제
+  name: 포트폴리오 조회
   type: http
-  seq: 17
+  seq: 8
 }
 
-delete {
-  url: {{server_domain}}/portfolio/{portfolioId}/feedback/{feedbackId}
+get {
+  url: {{server_domain}}/portfolio/{portfolioId}
   body: none
   auth: none
 }
@@ -17,7 +17,14 @@ docs {
       "isSuccess": true,
       "code": 200,
       "message": "성공",
-      "result": null
+      "result": {
+        "portfolio" : {
+            "id" : 1,
+            "job" :"백엔드",
+            "open" : true
+        }
+      }
+  }
   
   ```
   
