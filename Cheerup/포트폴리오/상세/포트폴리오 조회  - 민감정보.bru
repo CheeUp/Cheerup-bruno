@@ -1,7 +1,7 @@
 meta {
   name: 포트폴리오 조회  - 민감정보
   type: http
-  seq: 10
+  seq: 14
 }
 
 get {
@@ -20,14 +20,31 @@ docs {
       "result": {
         "portfolio" : {
           "id" : 1,
-          "personalInfo" : {
-            "id" : 1,
-            "name" : "김싸피",
-            "email" : "ssafy@ssafy.com",
-            "introduction" : "안녕하세요. 김싸피포트폴리오입니다.",
-            "githubUrl" : "githubUrl",
-            "blogUrl" : "blogUrl"
-          },
+          "sensitiveInfo" :{
+            "military": {
+              "id" : 1,
+              "type" : "군필",
+              "branch" :"육군",
+              "specialty" :"통신병",
+              "rank" :"병장",
+              "discharge" : "만기제대",
+              "startDate" :"2015-03-01",
+              "endDate" :"2017-03-01"
+            },
+            "veteran" :{
+              "id" : 1,
+              "status" :"대상",
+              "relation" :"직계가족",
+              "number" :"12345",
+              "ratio" : 0.1
+            },
+            "disability" :{
+              "id" : 1,
+              "status" :"대상",
+              "type" :"뇌전증",
+              "grade" :"1급"
+            }
+          }
         }    
       }
   }
