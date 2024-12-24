@@ -1,0 +1,70 @@
+meta {
+  name: 마이페이지 - 내가 스크랩 목록조회
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{server_domain}}/posts/scrap?page=1&size=10
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 1
+  size: 10
+}
+
+docs {
+  # 페이지네이션
+  ## Query Parameter 추가
+  /posts/scrap -> /posts/scrap?page=1&size=10
+  
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 
+      "message": "내가 스크랩한 글 목록 조회 성공",
+      "result": {
+         "pagination": {
+            "currentPage": 1,  // 현재 페이지
+            "pageSize": 10,  // 한 페이지에 표시된 글 수
+            "totalCount": 50,  // 전체 글 수
+            "totalPages": 5  // 총 페이지 수
+        },
+        "posts" : [
+          {
+            "postId": 1,  // 글 ID
+            "title": "게시글 제목",  // 게시글 제목
+            "content": "게시글 내용",  // 게시글 내용 (간략히로 보내야 함? x substring??)
+            "createdAt": "2024-12-23T12:00:00",  // 작성일시
+            "hits": 100,  // 조회수
+            "likes": 25,  // 좋아요 수
+            "commentCount": 5,  // 댓글 수
+          },
+          {
+            "postId": 2,  // 글 ID
+            "title": "게시글 제목",
+            "content": "게시글 내용",
+            "createdAt": "2024-12-23T12:00:00", 
+            "hits": 100,
+            "likes": 25,
+            "commentCount": 5,
+          },
+        ]
+      }
+    }
+  ```
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": 
+      "message": "실패 메시지",
+      "result": null
+    }
+  ```
+}
