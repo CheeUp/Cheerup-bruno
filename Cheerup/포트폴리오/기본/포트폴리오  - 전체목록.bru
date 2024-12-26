@@ -5,15 +5,15 @@ meta {
 }
 
 get {
-  url: {{server_domain}}/portfolios?{page}=1&{size}=10&{keyword}="검색어"
-  body: json
+  url: {{server_domain}}/portfolios?page=1&size=10&keyword="검색어"
+  body: none
   auth: none
 }
 
 params:query {
-  {page}: 1
-  {size}: 10
-  {keyword}: "검색어"
+  page: 1
+  size: 10
+  keyword: "검색어"
 }
 
 docs {

@@ -5,14 +5,14 @@ meta {
 }
 
 get {
-  url: {{server_domain}}/portfolio/{portfolioId}/feedback?{page}=1&{size}=10
+  url: {{server_domain}}/portfolio/{portfolioId}/feedback?page=1&size=10
   body: none
   auth: none
 }
 
 params:query {
-  {page}: 1
-  {size}: 10
+  page: 1
+  size: 10
 }
 
 docs {
