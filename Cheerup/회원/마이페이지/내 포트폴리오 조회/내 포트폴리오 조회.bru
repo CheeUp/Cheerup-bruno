@@ -1,0 +1,99 @@
+meta {
+  name: 내 포트폴리오 조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: 
+  body: none
+  auth: none
+}
+
+docs {
+  # ✅ 성공
+  
+  ### 회원 토큰 전송 필요
+  
+  ```json
+  {
+        "isSuccess": true,
+        "code": 200,
+        "message": "내 포트폴리오 조회 성공",
+        "result": {
+          "pagination": {
+              "currentPage": 1,
+              "pageSize": 10,
+              "totalCount": 2,
+              "totalPages": 1
+          },  
+          "portfolios" : [
+            {
+              "id" : 1,
+              "likes" : 1,
+              "likesStatus" : true,
+              "author" : {
+                "id" : 1
+                "nickname" : "김싸피",
+                "profileImage" : "www.image.com"
+              },
+              "createdAt":"2024-01-01T00:00:00",
+              "jobs" :"백엔드",
+            },
+            {
+              "id" : 11,
+              "likes" : 3,
+              "likesStatus" : true,
+              "author" : {
+                "id" : 1
+                "nickname" : "김싸피",
+                "profileImage" : "www.image.com"
+              },
+              "createdAt":"2024-01-01T00:00:00",
+              "jobs" :"백엔드",
+            },
+          ]
+        }
+    }
+  
+    ```
+  
+  ## 내가 작성한 포트폴리오가 존재하지 않을 경우 (요청은 성공)
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "내 포트폴리오가 존재하지 않습니다.",
+      "result": {
+          "pagination": {
+              "currentPage": 1,
+              "pageSize": 10,
+              "totalCount": 0,
+              "totalPages": 0
+          },
+          "posts": []
+      }
+  }
+  ```
+  
+  # ❌실패
+  
+  ## 유저 토큰 만료, 유저 토큰 없음 등의 경우
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 401,
+    "message": "인증에 실패하였습니다.",
+    "result": null
+  }
+  ```
+  
+  ## 서버 에러로 인한 내가 작성한 글 조회 실패
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 500,
+    "message": "서버 내부 오류입니다, 잠시후 다시 실행해주세요.",
+    "result": null
+  }
+}

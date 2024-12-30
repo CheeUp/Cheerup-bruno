@@ -1,0 +1,50 @@
+meta {
+  name: 회원정보조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{server_domain}}/member
+  body: none
+  auth: none
+}
+
+docs {
+  # ✅ 성공
+  
+  ### 회원 토큰 전송 필요
+  
+  ## 회원 정보 조회 성공
+  ``` json
+  {
+    "isSuccess": true,  
+    "code": 200,  
+    "message": null,  
+    "result": 
+      {
+        "nickname": "김싸피",
+        "email": "kim-ssafy@example.com",
+        "group": "SSAFY 12기",
+        "profileImage": "https://kakao.com/profile-image.jpg",
+        "skills": ["Flutter", "React", "Spring"],
+        "preferredJobs": ["백엔드", "프론트엔드", "모바일"],
+        "isActivated" : true
+      }
+  }
+  ```
+  
+  # ❌ 실패
+  
+  ### 유저 토큰 만료, 토큰 없음 등의 경우
+  
+  ## 회원 정보 조회 실패
+  ``` json
+  {
+    "isSuccess": false,
+    "code": 
+    "message": "잘못된 회원 정보입니다.",
+    "result": null
+  }
+  ```
+}
