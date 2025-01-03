@@ -1,13 +1,21 @@
 meta {
-  name: 게시판 - 게시판 목록
+  name: 게시판 - board 생성
   type: http
-  seq: 1
+  seq: 2
 }
 
-get {
-  url: {{server_domain}}/posts
-  body: none
+post {
+  url: {{server_domain}}/board
+  body: json
   auth: none
+}
+
+body:json {
+  {
+      "name":"자유",
+      "isAnonymous": false,
+      "category": "학습_게시판"
+  }
 }
 
 docs {
