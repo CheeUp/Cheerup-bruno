@@ -9,3 +9,53 @@ get {
   body: none
   auth: none
 }
+
+docs {
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "성공",
+      "result": {
+        "portfolio" : {
+          "id" : 1,
+          "projects" :[
+            {
+              "id" : 1,
+              "title" : "CHEE UP",
+              "outline" :"싸피인을 위한 취업 플랫폼",
+              "role" :"백엔드 개발",
+              "description" : "싸피인들을 위한 취업플랫폼, 커뮤니티 등등..",
+              "result" :"런칭하여 이러이러한..",
+              "githubUrl" :"githubUrl",
+              "skills" : [
+                {
+                  "id" : 3,
+                  "name" : "SpringBoot"
+                },
+                {
+                  "id" : 4,
+                  "name" : "React"
+                }
+              ]           
+            }
+          ]
+        }    
+      }
+  }
+  
+  ```
+  
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": ?,
+      "message": ?,
+      "result": null
+    }
+  ```
+}

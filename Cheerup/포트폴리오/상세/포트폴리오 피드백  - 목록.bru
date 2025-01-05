@@ -5,12 +5,72 @@ meta {
 }
 
 get {
-  url: {{server_domain}}/portfolio/{portfolioId}/feedback?{cursor}=1&{fetchSize}=10
+  url: {{server_domain}}/portfolio/{portfolioId}/feedback?page=1&size=10
   body: none
   auth: none
 }
 
 params:query {
-  {cursor}: 1
-  {fetchSize}: 10
+  page: 1
+  size: 10
+}
+
+docs {
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "성공",
+      "result": {
+        "pagination": {
+            "currentPage": 1,  // 현재 페이지
+            "pageSize": 10,  // 한 페이지에 표시된 글 수
+            "totalCount": 50,  // 전체 글 수
+            "totalPages": 5  // 총 페이지 수
+        },  
+        "feedbacks" : [
+          {
+            "id" : 1,
+            "likes" : 1,
+            "likesStatus" : true,
+            "content" : "테스트",
+            "author" : {
+              "id" : 1,
+              "nickname" : "nickname",
+              "profileImageUrl" : "profileImageUrl"
+            },
+            "createdAt":"2024-01-01T00:00:00",
+            "updatedAt":"2024-01-01T00:00:00",
+          },
+           {
+            "id" : 2,
+            "likes" : 22,
+            "likesStatus" : false,
+            "content" : "야호",
+            "author" : {
+              "id" : 1
+              "nickname" : "nickname",
+              "profileImageUrl" : "profileImageUrl"
+            },
+            "createdAt":"2024-01-01T00:00:00",
+            "updatedAt":"2024-01-01T00:00:00",
+          }
+        ]
+      }
+  }
+  
+  ```
+  
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": ?,
+      "message": ?,
+      "result": null
+    }
+  ```
 }

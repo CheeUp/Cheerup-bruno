@@ -6,6 +6,37 @@ meta {
 
 post {
   url: {{server_domain}}/portfolio/{portfolioId}/feedback
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "content": "테스트"
+  }
+}
+
+docs {
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "성공",
+      "result": null
+  }
+  
+  ```
+  
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": ?,
+      "message": ?,
+      "result": null
+    }
+  ```
 }

@@ -1,11 +1,48 @@
 meta {
   name: 포트폴리오 조회  - 개인정보
   type: http
-  seq: 14
+  seq: 13
 }
 
 get {
   url: {{server_domain}}/portfolio/{portfolioId}/personal-info
   body: none
   auth: none
+}
+
+docs {
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "성공",
+      "result": {
+        "portfolio" : {
+          "id" : 1,
+          "personalInfo" : {
+            "id" : 1,
+            "name" : "김싸피",
+            "email" : "ssafy@ssafy.com",
+            "introduction" : "안녕하세요. 김싸피포트폴리오입니다.",
+            "githubUrl" : "githubUrl",
+            "blogUrl" : "blogUrl"
+          },
+        }    
+      }
+  }
+  
+  ```
+  
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": ?,
+      "message": ?,
+      "result": null
+    }
+  ```
 }

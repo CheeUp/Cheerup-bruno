@@ -9,3 +9,46 @@ get {
   body: none
   auth: none
 }
+
+docs {
+  # ✅성공
+  ```json
+  {
+      "isSuccess": true,
+      "code": 200,
+      "message": "성공",
+      "result": {
+        "portfolio" : {
+          "id" : 1,
+          "techSkills" : [
+            {
+              "id": 1,
+              "name" : "Java",
+              "level" :"중급",
+              "description" :"실제 프로젝트에서 기술을 활용해 문제를 해결하고..."
+            },
+            {
+              "id": 2,
+              "name" : "Python",
+              "level" :"중급",
+              "description" :"실제 프로젝트에서 기술을 활용해 문제를 해결하고..."
+            }
+          ]
+        }    
+      }
+  }
+  
+  ```
+  
+  
+  # ❌실패
+  ## 실패한 경우
+  ```json
+  {
+      "isSuccess": false,
+      "code": ?,
+      "message": ?,
+      "result": null
+    }
+  ```
+}
