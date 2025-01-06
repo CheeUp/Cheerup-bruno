@@ -1,0 +1,19 @@
+meta {
+  name: 게시판 - board 수정
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{server_domain}}/board/7
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name":"자유123",
+      "isAnonymous": false,
+      "category": "학습_게시판"
+  }
+}
